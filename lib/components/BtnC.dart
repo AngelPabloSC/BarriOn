@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 class BtnC extends StatelessWidget {
   final String title;
   final Color? color;

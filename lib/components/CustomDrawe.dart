@@ -57,6 +57,7 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
+
           ListTile(
             leading: Icon(Icons.home),
             title: Text("Inicio"),
@@ -73,10 +74,57 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.query_builder),
-            title: Text("Consultas"),
+            leading: Icon(Icons.person),
+            title: Text("CrearUSuario"),
             onTap: () {
-              Navigator.pushNamed(context, '/consultas');
+              Navigator.pushNamed(context, '/CreateUSer');
+            },
+          ),
+          // ListTile(
+          //   leading: Icon(Icons.search),
+          //   title: Text("Consultas"),
+          //   onTap: () {
+          //     Navigator.pushNamed(context, '/consultas');
+          //   },
+          // ),
+          ListTile(
+            leading: Icon(Icons.app_registration),
+            title: Text("Lista"),
+            onTap: () {
+              Navigator.pushNamed(context, '/ListUser');
+            },
+
+          ),
+          ListTile(
+            leading: Icon(Icons.app_registration),
+            title: Text("Registro De Corte"),
+            onTap: () {
+              Navigator.pushNamed(context, '/RegistroCorte');
+            },
+
+          ),
+
+          ListTile(
+            leading: Icon(Icons.app_registration),
+            title: Text("Registro Usuario"),
+            onTap: () {
+              Navigator.pushNamed(context, '/RegistroUsuario');
+            },
+
+          ),
+          ListTile(
+            leading: Icon(Icons.login_outlined),
+            title: Text("Login"),
+            onTap: () {
+              Navigator.pushNamed(context, '/Login');
+            },
+          ),
+
+          ListTile(
+            leading: Icon(Icons.query_builder),
+            title: Text("History"),
+            onTap: () {
+              Navigator.pushNamed(context, '/Historial');
             },
           ),
           Spacer(), // Empuja los botones hacia la parte inferior del Drawer
@@ -100,14 +148,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Otros botones
-                ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/settings');
-                  },
-                  icon: Icon(Icons.settings),
-                  label: Text("Configuración"),
-                ),
+
                 SizedBox(height: 10),
                 ElevatedButton.icon(
                   onPressed: () {

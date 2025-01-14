@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../theme/setting_controller.dart';
-import 'screens/home_screen.dart';
 import './pages/PerfilScreen.dart';
+import './pages/Login.dart';
+import './pages/History.dart';
+import './pages/RegisterCut.dart';
+import './pages/RegisterUser.dart';
+import './pages/Home.dart';
 import './pages/consultas_screen.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-
+import './pages/UserPage.dart';
+import './pages/ListarUsuarios.dart';
 void main() {
   runApp(MyApp());
 }
@@ -26,30 +30,16 @@ class MyApp extends StatelessWidget {
               '/': (context) => HomeScreen(),
               '/perfil': (context) => PerfilScreen(),
               '/consultas': (context) => ConsultasScreen(),
+              '/Login': (context) => LoginPage(),
+              '/RegistroCorte': (context) => RegisterCut(),
+              '/RegistroUsuario':(context)=>RegisterUser(),
+              '/Historial':(context)=>HistoryPage(),
+              '/CreateUSer':(context)=> UsuarioPage(),
+              '/ListUser':(context)=> ListaUsuariosPage(),
             },
           );
+
         },
-      ),
-    );
-  }
-}
-
-class CacheExample extends StatelessWidget {
-  final CacheManager cacheManager = DefaultCacheManager();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Cache Example')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () async {
-            // Ejemplo de guardar un archivo en caché
-            final file = await cacheManager.getSingleFile('https://example.com/image.jpg');
-            print('Archivo guardado en caché: ${file.path}');
-          },
-          child: Text('Guardar archivo en caché'),
-        ),
       ),
     );
   }
